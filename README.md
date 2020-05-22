@@ -1,3 +1,3 @@
 # grad
 
-Put your notebooks into the notebook folder.
+Notebooks go into the notebook folder.
