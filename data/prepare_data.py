@@ -51,12 +51,12 @@ def trending_date(string):
     return date(int(trend_string[0]),int(trend_string[2]),int(trend_string[1]))
 
 #load data
-gb = pd.read_csv('GBvideos.csv')
-ca = pd.read_csv('CAvideos.csv')
-us = pd.read_csv('USvideos.csv')
+gb = pd.read_csv('youtube-new/GBvideos.csv')
+ca = pd.read_csv('youtube-new/CAvideos.csv')
+us = pd.read_csv('youtube-new/USvideos.csv')
 
 #Extract categories from json files
-with open("GB_category_id.json") as f:
+with open("youtube-new/GB_category_id.json") as f:
     categories = json.load(f)["items"]
 cat_dict = {}
 for cat in categories:
@@ -64,7 +64,7 @@ for cat in categories:
 gb['category_name'] = gb['category_id'].map(cat_dict)
 
 
-with open("CA_category_id.json") as f:
+with open("youtube-new/CA_category_id.json") as f:
     categories = json.load(f)["items"]
 cat_dict = {}
 for cat in categories:
@@ -72,7 +72,7 @@ for cat in categories:
 ca['category_name'] = ca['category_id'].map(cat_dict)
 
 
-with open("US_category_id.json") as f:
+with open("youtube-new/US_category_id.json") as f:
     categories = json.load(f)["items"]
 cat_dict = {}
 for cat in categories:
