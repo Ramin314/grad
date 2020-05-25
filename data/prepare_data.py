@@ -5,6 +5,28 @@ import json
 from datetime import date
 
     
+def published_date(string):
+    
+    '''This function is specfic for the string format
+    in this dataset.
+    
+    Input:
+        string: string of published datae
+        
+    Algorithm:
+        Split string at letter 'T' and then split at '-'.
+        This returns a list containing the year, month and day.
+        Convert strings to int type.
+        Create date object instance with format (year,month,day)
+        
+    Returns:
+        datetime.date object containing the date of publication.'''
+    
+    date_string = string.split('T')[0].split('-') # split into list containing strings
+    return date(int(date_string[0]),int(date_string[1]),int(date_string[2])) #return datetime object (year,month,day)
+
+
+
 def trending_date(string):
     
     '''This function is specfic for the string format
@@ -27,28 +49,6 @@ def trending_date(string):
     trend_string[0] = '20'+trend_string[0]
     return date(int(trend_string[0]),int(trend_string[2]),int(trend_string[1]))
 
-
-def trending_date(string):
-    
-    '''This function is specfic for the string format
-    in this dataset.
-    
-    Input:
-        string: string of published datae
-        
-    Algorithm:
-        Split string at '.'.
-        This returns a list containing the year, month and day.
-        Change year from '00xx' to '20xx' (eg. 0017 to 2017).
-        Convert strings to int type.
-        Create date object instance with format (year,month,day)
-        
-    Returns:
-        datetime.date object containing the date of publication.'''
-        
-    trend_string = string.split('.')
-    trend_string[0] = '20'+trend_string[0]
-    return date(int(trend_string[0]),int(trend_string[2]),int(trend_string[1]))
 
 #load data
 gb = pd.read_csv('youtube-new/GBvideos.csv')
@@ -98,4 +98,5 @@ data['days_till_trending'] = data['trending_date'] - data['publish_time'] #gives
 data['days_till_trending'] = data['days_till_trending'].apply(lambda x: x.days) #extracts the number of days from date object
 
 if __name__ == '__main__':
-    data.to_csv('data.csv', index=False)
+    data.to_csv('youtube-new/data.csv', index=False)
+
