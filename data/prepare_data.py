@@ -2,13 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import json
-from enum import Enum
 from datetime import date
 
-class Country(Enum):
-    gb = 0
-    ca = 1
-    us = 2
     
 def trending_date(string):
     
@@ -31,7 +26,7 @@ def trending_date(string):
     trend_string = string.split('.')
     trend_string[0] = '20'+trend_string[0]
     return date(int(trend_string[0]),int(trend_string[2]),int(trend_string[1]))
-    #return trend_string
+
 
 def trending_date(string):
     
@@ -54,9 +49,8 @@ def trending_date(string):
     trend_string = string.split('.')
     trend_string[0] = '20'+trend_string[0]
     return date(int(trend_string[0]),int(trend_string[2]),int(trend_string[1]))
-    #return trend_string
 
-
+#load data
 gb = pd.read_csv('GBvideos.csv')
 ca = pd.read_csv('CAvideos.csv')
 us = pd.read_csv('USvideos.csv')
@@ -87,11 +81,10 @@ us['category_name'] = us['category_id'].map(cat_dict)
 
 
 
-#Encode countries
-gb['country'] = Country(0)
-ca['country'] = Country(1)
-us['country'] = Country(2)
-
+#Create column to keep track of country
+gb['country'] = 'gb'
+ca['country'] = 'ca'
+us['country'] = 'us'
 #Join data sets
 data = pd.concat([gb,ca,us],axis=0).reset_index(drop=True)
 
