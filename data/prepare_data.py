@@ -98,5 +98,5 @@ data['days_till_trending'] = data['trending_date'] - data['publish_time'] #gives
 data['days_till_trending'] = data['days_till_trending'].apply(lambda x: x.days) #extracts the number of days from date object
 
 if __name__ == '__main__':
-    data.to_csv('data.csv', index=False)
+    data.to_csv('youtube-new/data.csv', index=False)
 
