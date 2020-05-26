@@ -104,7 +104,7 @@ def compute_colour(vid_id, img_url):
 
 if __name__ == '__main__':
     # read data
-    df = pd.read_csv("../GBvideos.csv")
+    df = pd.read_csv("youtube-new/GBvideos.csv")
     df = df[['video_id', 'thumbnail_link']]
     df = df.groupby('video_id').last()
 
