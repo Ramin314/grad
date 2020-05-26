@@ -4,6 +4,8 @@
 
 In this project, we operate as a digital consultancy looking to help out YouTubers. We have gathered rigorous statistical research notebooks under the Research folder, and have provided actionable insights under the Insights folder. Of particular interest is the <code>Main Insights</code> file.
 
+We're also on [Github](https://github.com/Ramin314/grad).
+
 ## Getting Started
 
 Save the <code>youtube-new</code> directory containing the relevant <code>.csv</code> and <code>.json</code> files into the <code>data</code> directory. Then run <code>python prepare_data.py</code> to clean and feature engineer the data.
