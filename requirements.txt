@@ -15,7 +15,7 @@ backports.tempfile==1.0
 backports.weakref==1.0.post1
 beautifulsoup4==4.9.0
 binaryornot==0.4.4
-bleach==3.1.4
+bleach==3.3.0
 blinker==1.4
 botocore==1.16.15
 cachetools==4.1.0
