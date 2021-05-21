@@ -149,7 +149,7 @@ SQLAlchemy==1.3.17
 tensorboard==2.2.1
 tensorboard-plugin-wit==1.6.0.post3
 tensorboardX==2.0
-tensorflow==2.1.2
+tensorflow==2.5.0
 tensorflow-estimator==2.2.0
 tensorflow-probability==0.8.0rc0
 termcolor==1.1.0
